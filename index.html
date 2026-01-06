@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" onerror="this.style.display='none'">
+    <style>
+        /* CSS variables for easy customization */
+        :root {
+            --pastel-pink: #ffd1dc;
+            --pastel-purple: #e0bbf8;
+            --pastel-yellow: #fffac8;
+            --pastel-blue: #b5e8fc;
+            --dark-pink: #ff9eb5;
+            --text-color: #5a3d5c;
+        }
+
+        /* Personalization variables */
+        :root {
+            --celebrant-name: "Te Osang";
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Arial Rounded MT Bold', 'Arial', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-purple), var(--pastel-blue));
+            background-size: 400% 400%;
+            background-attachment: fixed;
+            animation: gradientBG 15s ease infinite;
+            -webkit-animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            -webkit-transform3d: translate3d(0,0,0);
+            transform3d: translate3d(0,0,0);
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @-webkit-keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            z-index: 10;
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .headline {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.7);
+            animation: fadeInBounce 1.5s ease-out;
+            -webkit-animation: fadeInBounce 1.5s ease-out;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            line-height: 1.2;
+            -webkit-transform3d: translate3d(0,0,0);
+            transform3d: translate3d(0,0,0);
+        }
+
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            70% {
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @-webkit-keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(0.8);
+                transform: scale(0.8);
+            }
+            70% {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+
+        .subtext {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            animation: fadeIn 2s ease-out 0.5s both;
+            -webkit-animation: fadeIn 2s ease-out 0.5s both;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @-webkit-keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cake-container {
+            margin: 2rem 0;
+            animation: fadeIn 2s ease-out 1s both;
+            -webkit-animation: fadeIn 2s ease-out 1s both;
+        }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        .cake-base {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            background: var(--pastel-yellow);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake-middle {
+            position: absolute;
+            bottom: 80px;
+            left: 20px;
+            width: 160px;
+            height: 40px;
+            background: var(--pastel-pink);
+            border-radius: 8px;
+        }
+
+        .cake-top {
+            position: absolute;
+            bottom: 110px;
+            left: 40px;
+            width: 120px;
+            height: 30px;
+            background: var(--pastel-purple);
+            border-radius: 6px;
+        }
+
+        .candle {
+            position: absolute;
+            bottom: 140px;
+            left: 95px;
+            width: 10px;
+            height: 30px;
+            background: var(--pastel-blue);
+            border-radius: 5px 5px 0 0;
+        }
+
+        .flame {
+            position: absolute;
+            bottom: 170px;
+            left: 92px;
+            width: 16px;
+            height: 25px;
+            background: #FFD700;
+            border-radius: 50% 50% 20% 20%;
+            animation: flicker 1s infinite alternate;
+            -webkit-animation: flicker 1s infinite alternate;
+            box-shadow: 0 0 10px #FFA500, 0 0 20px #FF4500;
+        }
+
+        @keyframes flicker {
+            0% { transform: scaleY(1); opacity: 0.8; }
+            100% { transform: scaleY(1.1); opacity: 1; }
+        }
+        
+        @-webkit-keyframes flicker {
+            0% { -webkit-transform: scaleY(1); opacity: 0.8; }
+            100% { -webkit-transform: scaleY(1.1); opacity: 1; }
+        }
+
+        .wish-button {
+            background: linear-gradient(45deg, var(--pastel-pink), var(--pastel-purple));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            animation: pulse 2s infinite;
+            -webkit-animation: pulse 2s infinite;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+            -webkit-transform3d: translate3d(0,0,0);
+            transform3d: translate3d(0,0,0);
+        }
+
+        .wish-button:hover {
+            transform: translateY(-5px);
+            -webkit-transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, var(--dark-pink), #d9a7f7);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+            50% { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); }
+            100% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+        }
+        
+        @-webkit-keyframes pulse {
+            0% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+            50% { box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); }
+            100% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnim 1.5s linear infinite;
+            -webkit-animation: sparkleAnim 1.5s linear infinite;
+        }
+
+        @keyframes sparkleAnim {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        @-webkit-keyframes sparkleAnim {
+            0% { -webkit-transform: scale(0); opacity: 1; }
+            100% { -webkit-transform: scale(1.5); opacity: 0; }
+        }
+
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 70px;
+            border-radius: 50%;
+            bottom: -100px;
+            animation: balloonFloat 15s linear infinite;
+            -webkit-animation: balloonFloat 15s linear infinite;
+        }
+
+        .balloon:before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes balloonFloat {
+            0% { 
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            100% { 
+                transform: translateX(calc((var(--x, 0) - 50vw) / 3)) translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @-webkit-keyframes balloonFloat {
+            0% { 
+                -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+                transform: translateX(0) translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            100% { 
+                -webkit-transform: translateX(calc((var(--x, 0) - 50vw) / 3)) translateY(-100vh) rotate(360deg);
+                transform: translateX(calc((var(--x, 0) - 50vw) / 3)) translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--pastel-pink);
+            animation: confettiFall 5s linear infinite;
+            -webkit-animation: confettiFall 5s linear infinite;
+        }
+
+        .confetti:nth-child(2n) {
+            background-color: var(--pastel-purple);
+            animation-duration: 7s;
+        }
+
+        .confetti:nth-child(3n) {
+            background-color: var(--pastel-yellow);
+            animation-duration: 6s;
+        }
+
+        .confetti:nth-child(4n) {
+            background-color: var(--pastel-blue);
+            animation-duration: 8s;
+        }
+
+        @keyframes confettiFall {
+            0% { 
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @-webkit-keyframes confettiFall {
+            0% { 
+                -webkit-transform: translateY(-20px) rotate(0deg);
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                -webkit-transform: translateY(100vh) rotate(360deg);
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            animation: modalAppear 0.5s ease-out;
+            -webkit-animation: modalAppear 0.5s ease-out;
+        }
+
+        @keyframes modalAppear {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @-webkit-keyframes modalAppear {
+            0% { -webkit-transform: scale(0.5); opacity: 0; }
+            100% { -webkit-transform: scale(1); opacity: 1; }
+        }
+
+        .modal h2 {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .modal p {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .close-btn {
+            margin-top: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--pastel-pink);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Music control button */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Floating image */
+        .floating-image {
+            position: absolute;
+            top: 15%;
+            right: 5%;
+            animation: float 6s ease-in-out infinite;
+            -webkit-animation: float 6s ease-in-out infinite;
+            z-index: 5;
+            pointer-events: none;
+            width: 80px;
+        }
+        
+        .floating-img {
+            width: 80px;
+            height: auto;
+            -webkit-filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0px); }
+        }
+        
+        @-webkit-keyframes float {
+            0% { -webkit-transform: translateY(0px) rotate(0deg); }
+            50% { -webkit-transform: translateY(-20px) rotate(5deg); }
+            100% { -webkit-transform: translateY(0px) rotate(0px); }
+        }
+        
+        /* Share section */
+        .share-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            margin: 2rem auto 0 auto;
+        }
+
+        .share-section h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .share-btn {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(45deg, var(--pastel-blue), var(--pastel-purple));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .qr-container {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-placeholder {
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 2.5rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .subtext {
+                font-size: 1.2rem;
+            }
+            
+            .cake {
+                transform: scale(0.8);
+            }
+            
+            .wish-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .floating-image {
+                position: absolute;
+                top: 10%;
+                right: 5%;
+                width: 60px;
+            }
+            
+            .share-section {
+                width: 90%;
+                padding: 1rem;
+            }
+            
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .headline {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .subtext {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .cake {
+                transform: scale(0.6);
+                margin: 1.5rem 0;
+            }
+            
+            .cake-container {
+                margin: 1.5rem 0;
+            }
+            
+            .floating-image {
+                position: absolute;
+                top: 5%;
+                right: 5%;
+                width: 50px;
+            }
+            
+            .wish-button {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                margin-top: 1.5rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            .share-btn {
+                width: 100%;
+                max-width: 200px;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .qr-code {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        /* Additional mobile optimizations */
+        @media (max-width: 360px) {
+            .headline {
+                font-size: 1.8rem;
+            }
+            
+            .subtext {
+                font-size: 0.9rem;
+            }
+            
+            .cake {
+                transform: scale(0.5);
+            }
+            
+            .floating-image {
+                width: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .headline {
+                font-size: 2rem;
+            }
+            
+            .subtext {
+                font-size: 1rem;
+            }
+            
+            .cake {
+                transform: scale(0.6);
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Music control button -->
+    <button class="music-control" id="musicControl">🔊</button>
+    
+    <!-- Balloons -->
+    <div class="balloon" style="left: 10%; --x: 10%; background: var(--pastel-pink);"></div>
+    <div class="balloon" style="left: 20%; --x: 20%; background: var(--pastel-purple); animation-delay: 1s;"></div>
+    <div class="balloon" style="left: 30%; --x: 30%; background: var(--pastel-yellow); animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 40%; --x: 40%; background: var(--pastel-blue); animation-delay: 3s;"></div>
+    <div class="balloon" style="left: 50%; --x: 50%; background: var(--pastel-pink); animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 60%; --x: 60%; background: var(--pastel-purple); animation-delay: 5s;"></div>
+    <div class="balloon" style="left: 70%; --x: 70%; background: var(--pastel-yellow); animation-delay: 6s;"></div>
+    <div class="balloon" style="left: 80%; --x: 80%; background: var(--pastel-blue); animation-delay: 7s;"></div>
+    <div class="balloon" style="left: 90%; --x: 90%; background: var(--pastel-pink); animation-delay: 8s;"></div>
+
+    <!-- Confetti -->
+    <div class="confetti" style="left: 5%;"></div>
+    <div class="confetti" style="left: 15%; animation-delay: 1s;"></div>
+    <div class="confetti" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="confetti" style="left: 35%; animation-delay: 3s;"></div>
+    <div class="confetti" style="left: 45%; animation-delay: 4s;"></div>
+    <div class="confetti" style="left: 55%; animation-delay: 5s;"></div>
+    <div class="confetti" style="left: 65%; animation-delay: 1s;"></div>
+    <div class="confetti" style="left: 75%; animation-delay: 2s;"></div>
+    <div class="confetti" style="left: 85%; animation-delay: 3s;"></div>
+    <div class="confetti" style="left: 95%; animation-delay: 4s;"></div>
+
+    <div class="container">
+        <h1 class="headline">🎉 Happy Birthday, <span id="nameDisplay"></span>! 🎂</h1>
+        <p class="subtext">Wishing you joy, love, and happiness on your special day!</p>
+        
+        <div class="cake-container">
+            <div class="cake">
+                <div class="cake-base"></div>
+                <div class="cake-middle"></div>
+                <div class="cake-top"></div>
+                <div class="candle"></div>
+                <div class="flame"></div>
+            </div>
+        </div>
+        
+        <button class="wish-button">🎂 Make a Wish</button>
+        
+        <!-- Floating image -->
+        <div class="floating-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/819/819862.png" alt="Birthday Balloon" class="floating-img">
+        </div>
+        
+        <div class="share-section">
+            <h3>Share This Birthday Page</h3>
+            <div class="share-buttons">
+                <button class="share-btn" id="copyUrlBtn">Copy Link</button>
+            </div>
+            <div class="qr-container">
+                <div class="qr-code" id="qrCode">
+                    <div class="qr-placeholder">QR Code will appear here</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal for wish message -->
+    <div class="modal" id="wishModal">
+        <div class="modal-content">
+            <h2>✨ May all your dreams come true, <span id="modalName"></span>! ✨</h2>
+            <p>Make a wish and blow out the candles!</p>
+            <button class="close-btn" id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Audio element for birthday song -->
+    <audio id="birthdaySong" src="happy-birthday-in-english-male-15023.mp3" preload="auto" loop></audio>
+
+    <script>
+        // Personalization variables
+        const celebrantName = "Te Osang";
+        
+        // DOM elements
+        const nameDisplay = document.getElementById('nameDisplay');
+        const modalName = document.getElementById('modalName');
+        const musicControl = document.getElementById('musicControl');
+        const birthdaySong = document.getElementById('birthdaySong');
+        const copyUrlBtn = document.getElementById('copyUrlBtn');
+        const qrCode = document.getElementById('qrCode');
+        
+        // Initialize the page with personalization
+        function initializePage() {
+            nameDisplay.textContent = celebrantName;
+            modalName.textContent = celebrantName;
+            
+            // Set up music to play automatically
+            setTimeout(() => {
+                birthdaySong.play().catch(e => console.log("Auto-play failed, user interaction required:"));
+            }, 500);
+            
+            // Generate QR code
+            generateQRCode();
+        }
+        
+
+
+        // Function to create sparkles on click
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            sparkle.style.backgroundColor = getRandomColor();
+            document.body.appendChild(sparkle);
+            
+            // Remove sparkle after animation completes
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+
+        function getRandomColor() {
+            const colors = ['#ffd1dc', '#e0bbf8', '#fffac8', '#b5e8fc', '#ff9eb5', '#a2d2ff'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Add sparkle effect to the name in the headline
+        nameDisplay.addEventListener('mousemove', (e) => {
+            if(Math.random() > 0.7) { // Only create sparkles occasionally
+                createSparkle(e.clientX, e.clientY);
+            }
+        });
+        
+        // Add touch event for mobile devices
+        nameDisplay.addEventListener('touchmove', (e) => {
+            if(Math.random() > 0.7) { // Only create sparkles occasionally
+                const touch = e.touches[0];
+                createSparkle(touch.clientX, touch.clientY);
+            }
+        });
+
+        // Make a wish button functionality
+        const wishButton = document.querySelector('.wish-button');
+        wishButton.addEventListener('click', function() {
+            // Play birthday song if not already playing
+            birthdaySong.play().catch(e => console.log("Audio play failed:", e));
+            
+            // Show modal
+            document.getElementById('wishModal').style.display = 'flex';
+            
+            // Create burst of sparkles and confetti
+            createBurstEffect();
+        });
+        
+        // Add touch event for mobile devices
+        wishButton.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent default touch behavior
+            // Play birthday song if not already playing
+            birthdaySong.play().catch(e => console.log("Audio play failed:", e));
+            
+            // Show modal
+            document.getElementById('wishModal').style.display = 'flex';
+            
+            // Create burst of sparkles and confetti
+            createBurstEffect();
+        });
+
+        // Create burst of sparkles and confetti
+        function createBurstEffect() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    createSparkle(x, y);
+                    
+                    // Create confetti burst
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${x}px`;
+                    confetti.style.top = `${y}px`;
+                    confetti.style.backgroundColor = getRandomColor();
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = `${Math.random() * 10 + 5}px`;
+                    confetti.style.position = 'fixed';
+                    document.body.appendChild(confetti);
+                    
+                    // Remove confetti after animation completes
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 2000);
+                }, i * 50);
+            }
+        }
+
+        // Close modal functionality
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('wishModal').style.display = 'none';
+        });
+        
+        // Add touch event for mobile devices
+        document.getElementById('closeModal').addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent default touch behavior
+            document.getElementById('wishModal').style.display = 'none';
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('wishModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Close modal when touching outside of it
+        window.addEventListener('touchstart', function(event) {
+            const modal = document.getElementById('wishModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Add more confetti periodically
+        function createMoreConfetti() {
+            const confettiCount = 20;
+            for (let i = 0; i < confettiCount; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.animationDelay = `${Math.random() * 5}s`;
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = `${Math.random() * 10 + 5}px`;
+                    document.body.appendChild(confetti);
+                    
+                    // Remove confetti after animation completes
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 300);
+            }
+        }
+
+        // Create additional confetti every 3 seconds
+        setInterval(createMoreConfetti, 3000);
+
+        // Music control functionality
+        musicControl.addEventListener('click', function() {
+            toggleMusic();
+        });
+        
+        // Add touch event for mobile devices
+        musicControl.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent default touch behavior
+            toggleMusic();
+        });
+        
+        function toggleMusic() {
+            if (birthdaySong.paused) {
+                birthdaySong.play().then(() => {
+                    musicControl.textContent = '🔊';
+                }).catch(e => {
+                    console.log("Audio play failed, user interaction required:", e);
+                    musicControl.textContent = '🔇';
+                });
+            } else {
+                birthdaySong.pause();
+                musicControl.textContent = '🔇';
+            }
+        }
+
+        // Copy URL to clipboard functionality
+        copyUrlBtn.addEventListener('click', function() {
+            copyUrlToClipboard();
+        });
+        
+        // Add touch event for mobile devices
+        copyUrlBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent default touch behavior
+            copyUrlToClipboard();
+        });
+        
+        function copyUrlToClipboard() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                // Visual feedback
+                const originalText = copyUrlBtn.textContent;
+                copyUrlBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyUrlBtn.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy URL: ', err);
+                alert('Failed to copy URL. Please try again.');
+            });
+        }
+
+        // Generate QR code
+        function generateQRCode() {
+            // Clear previous QR code
+            qrCode.innerHTML = '';
+            
+            // Create a simple visual representation of a QR code
+            // In a real implementation, you would use a QR code library
+            // For this single-file solution, we'll create a visual representation
+            const qrContainer = document.createElement('div');
+            qrContainer.style.display = 'grid';
+            qrContainer.style.gridTemplateColumns = 'repeat(7, 1fr)';
+            qrContainer.style.gridTemplateRows = 'repeat(7, 1fr)';
+            qrContainer.style.width = '100%';
+            qrContainer.style.height = '100%';
+            
+            // Generate a pattern for the QR code
+            for (let i = 0; i < 49; i++) { // 7x7 grid
+                const cell = document.createElement('div');
+                cell.style.backgroundColor = Math.random() > 0.5 ? '#000' : '#fff';
+                cell.style.border = 'none';
+                qrContainer.appendChild(cell);
+            }
+            
+            // Add the QR code to the container
+            qrCode.appendChild(qrContainer);
+            
+            // Add label below
+            const label = document.createElement('div');
+            label.textContent = 'Scan to share';
+            label.style.marginTop = '10px';
+            label.style.fontSize = '0.8rem';
+            label.style.color = 'var(--text-color)';
+            qrCode.appendChild(label);
+        }
+
+        // Initialize the page when loaded
+        window.onload = function() {
+            initializePage();
+            createMoreConfetti();
+        };
+    </script>
+</body>
+</html>
